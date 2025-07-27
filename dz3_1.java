@@ -7,6 +7,7 @@ public class dz3_1 {
         String name1 = scanner1.nextLine();
 
         System.out.println("Привет, "+ name1);
+        scanner1.close();
     }
 
 }
