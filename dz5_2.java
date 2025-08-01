@@ -18,28 +18,20 @@ public class dz5_2 {
 
             for (int i =0;i<(sSymbols.length()-4);i= i+nDelta){
                 nDelta=1;
-                //System.out.println("i " +i);
                 int nIndexR = sSymbols.indexOf(">>-->",i);
-                //System.out.println("nIndexR " + nIndexR);
                 int nIndexL = sSymbols.indexOf("<--<<",i);
-                //System.out.println("nIndexL " + nIndexL);
                 if (nIndexR==i){nCount++;nDelta=nDelta+(5*nCross);}
-                //System.out.println(nCount);
                 if (nIndexL==i){nCount++;;nDelta=nDelta+(5*nCross);};
-                //System.out.println(nCount);
             }
             System.out.println("Итоговое количество стрел - " +nCount);
+            scanner2.close();
             }
-
-       
         scanner1.close();
+        
     }
 }
 
 /*
-В рамках данной задачи, считаем, что стрела могут накладываться друг на друга, 
-то есть последовательность ">>-->>-->" - это две стрелы.
-
 Задача 2. Задана последовательность, состоящая только из символов ‘>’, ‘<’ и ‘-‘. Требуется найти количество стрел, 
 которые спрятаны в этой последовательности. Стрелы – это подстроки вида ‘>>-->’ и ‘<--<<’.
 Входные данные: в первой строке входного потока записана строка, состоящая из символов ‘>’, ‘<’ и ‘-‘ (без пробелов). 
