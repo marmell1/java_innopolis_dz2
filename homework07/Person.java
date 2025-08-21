@@ -16,9 +16,9 @@ public class Person {
         else if (this.name.length()<=3){System.out.println("Имя не может быть короче трех символов");System.exit(0);};
         if (this.money<0){System.out.println("Деньги не могут быть отрицительными");System.exit(0);}
         
-        //в комментариях в ТГ преподаватель писал, что можно сделать массив на 10 единиц, этого хватит.
+        //в комментариях в ТГ преподаватель писал, что можно сделать массив на 10 единиц, этого хватит. С проверкой на дочернее увеличен до 100
         //вместо того, чтобы пересоздавать каждый раз при добавлении нового элемента, т.к. массивы не динамичексие
-        String[] serv_array = new String[10];
+        String[] serv_array = new String[100];
         customers_money.put(this.name, this.money);
         customers_bag.put(this.name, serv_array);
     }
@@ -31,7 +31,7 @@ public class Person {
             for (int i = 0;i<customers_bag.get(custName).length;i++){
                 if (customers_bag.get(custName)[i] == null){
                     customers_bag.get(custName)[i] = prodName;
-                    i=11;
+                    i=101;
                 }
             }
             
@@ -78,9 +78,10 @@ public class Person {
     @Override
     public boolean equals (Object o) {
         if (o == this) {return true;}
-        if (o == null || o.getClass() != this.getClass()) {return false;}
-
+        if (o == null || o.getClass() != this.getClass()) {return false;}//объект того же класса
+        
     }
+
     @Override
     public int hashCode() {
     final int prime = 31;
